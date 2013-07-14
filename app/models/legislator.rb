@@ -3,6 +3,9 @@ require_relative '../../db/config'
 
 class Legislator < ActiveRecord::Base
   before_save :format_phone_numbers
+  has_many :tweets
+
+  
 
   def format_phone_numbers
     phone.gsub!('-','')
